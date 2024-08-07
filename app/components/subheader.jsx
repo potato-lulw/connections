@@ -3,15 +3,9 @@ import moment from 'moment';
 import React, { useState, useEffect } from 'react';
 
 const SubHeader = () => {
-    const [currentTime, setCurrentTime] = useState(moment().format('MMMM Do YYYY, h:mm:ss a'));
+    const [currentTime, setCurrentTime] = useState(moment().format('MMMM Do YYYY'));
 
-    useEffect(() => {
-        const intervalId = setInterval(() => {
-            setCurrentTime(moment().format('MMMM Do YYYY, h:mm:ss a'));
-        }, 1000);
-
-        return () => clearInterval(intervalId); // Clean up the interval on component unmount
-    }, []);
+    
 
     return (
         <div className=' max-w-screen-xl px-4 py-6 sm:px-6 lg:px-10 w-full flex items-end gap-4'>

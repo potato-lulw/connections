@@ -1,9 +1,12 @@
+"use client"
 import React from 'react'
 import ToggleTheme from './ToggleTheme'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
+import { useRouter } from 'next/navigation'
 
 const Header = () => {
+    const router = useRouter();
     return (
         <header className="bg-background w-full">
             <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
@@ -18,7 +21,7 @@ const Header = () => {
                     <div className="md:flex md:items-center md:gap-12">
 
                         <div className="flex items-center gap-4">
-                            <Button size={"sm"}>Create</Button>
+                            <Button size={"sm"} onClick={() => router.push("/create")}>Create</Button>
 
                             <div className="block md:hidden">
                                 <button className="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75">
